@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "305296938536",
+    "project_id": "pune-planet",
+    "storage_bucket": "pune-planet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305296938536:android:2b010a7645c6ad0916471d",
+        "android_client_info": {
+          "package_name": "com.cctpl.puneplanet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305296938536-fu0bn982jgnctr46la1s8m0djtqgmf1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD--PznYK8-Wu5--wY1NyT5jpSuTBBiE9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305296938536-fu0bn982jgnctr46la1s8m0djtqgmf1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/logoLayout"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo"
+            android:id="@+id/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marathi_app_name"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/logo"
+            android:layout_marginLeft="10dp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/logoLayout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:gravity="center"
+        android:id="@+id/textLayout">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="वाचा फ्री "
+            android:layout_marginTop="20dp"
+            android:textColor="@color/red"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="मध्ये, हजारो कथा "
+            android:layout_toRightOf="@id/text"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="तुमच्या मातृभाषेत !"
+            android:layout_toRightOf="@id/text1"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/red"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/googleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@id/textLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardElevation="20dp"
+        tools:ignore="UnusedAttribute">
+
+        <RelativeLayout
+            android:id="@+id/googleSignInBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/google"
+                android:id="@+id/gImg"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginStart="20dp"
+                android:text="गूगल"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/gImg"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="20dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/facebookLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@id/googleLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardElevation="20dp"
+        tools:ignore="UnusedAttribute">
+
+        <RelativeLayout
+            android:id="@+id/facebookSignInBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/facebook"
+                android:id="@+id/fImg"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginStart="20dp"
+                android:text="फेसबूक"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/fImg"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="20dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="आघीपासूनच तुमचे अकाऊंट असेल तर ? ईमेलद्वारे साईन इन करण्यासाठी येथे क्लिक करा"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/facebookLayout"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="मी पुणे प्लनेटच्या सेवा अटी तसेच गोपनीयता नीती स्वीकार करत आहे."
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText" />
+
+    <RelativeLayout
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/black">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
