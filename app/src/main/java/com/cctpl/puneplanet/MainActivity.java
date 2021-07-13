@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -27,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     TextView userName;
     CircleImageView userProfile;
-    String UserName;
+    String UserName,UserId;
     Uri ProfileUrl;
     Fragment selectFragment;
 
     FirebaseAuth firebaseAuth;
+    FirebaseFirestore firebaseFirestore;
     BottomNavigationView bottomNavigationView;
 
     @SuppressLint("SetTextI18n")
@@ -42,12 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         bottomNavigationView = findViewById(R.id.nav);
-
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        UserName = user.getDisplayName();
-        ProfileUrl = user.getPhotoUrl();
-
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -60,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                         selectFragment = new LibraryFragment();
                         break;
                     case R.id.write :
-                        selectFragment = new WriteFragment();
+                        startActivity(new Intent(MainActivity.this,WriteActivity.class));
+                       // selectFragment = new WriteFragment();
                         break;
                     case R.id.update :
                         selectFragment = new UpdateFragment();

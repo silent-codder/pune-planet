@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WriteActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/write_bg">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/letter"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_margin="10dp"
+                android:id="@+id/btnBack"/>
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="लिहा"
+                android:textSize="18sp"
+                android:layout_toRightOf="@id/btnBack"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="लिहा कथा, कथामालिका, कविता आणि इतर"
+                android:layout_below="@id/btnBack"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnNew"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#EE047167"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/text2"
+                android:textStyle="bold"
+                android:text="नवीन साहित्य लिहा"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnDraft"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/btnNew"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/text2"
+                android:textStyle="bold"
+                android:text="ड्राफ्ट (0)"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

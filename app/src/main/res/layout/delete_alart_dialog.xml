@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="सावधान ! साहित्य कायमचे डिलीट होईल"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/subPoint_1"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:text="- वाचलेली वाचक संख्या डिलीट होईल"
+            android:layout_below="@id/title"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/subPoint_2"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="- मिळालेल्या रेटिंग डिलीट होतील"
+            android:layout_below="@id/subPoint_1"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/subPoint_3"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- मिळालेल्या समीक्षा डिलीट होतील"
+            android:layout_below="@id/subPoint_2"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="रद्द करा"
+            android:layout_toLeftOf="@id/btnDelete"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:layout_below="@id/subPoint_3"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/btnDelete"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="काढून टाका"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:layout_below="@id/subPoint_3"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

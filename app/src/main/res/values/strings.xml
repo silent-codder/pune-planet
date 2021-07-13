@@ -3,5 +3,8 @@
     <string name="marathi_app_name">पुणे प्लनेट</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fullscreenedit_text">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <!--    <string name="default_web_client_id">305296938536-fu0bn982jgnctr46la1s8m0djtqgmf1a.apps.googleusercontent.com</string>-->
 </resources>

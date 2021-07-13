@@ -24,6 +24,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -102,12 +105,27 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                            finish();
-                            loader.setVisibility(View.GONE);
-                            cardView.setVisibility(View.VISIBLE);
-                            cardView1.setVisibility(View.VISIBLE);
-                            Toast.makeText(LoginActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            String UserId = firebaseAuth.getCurrentUser().getUid();
+                            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+                            HashMap<String,Object> map = new HashMap<>();
+                            map.put("UserName",user.getDisplayName());
+                            map.put("ProfileUrl",String.valueOf(user.getPhotoUrl()));
+                            map.put("MobileNumber",user.getPhoneNumber());
+                            map.put("Email",user.getEmail());
+
+                            firebaseFirestore.collection("Users").document(UserId).set(map)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                            finish();
+                                            loader.setVisibility(View.GONE);
+                                            cardView.setVisibility(View.VISIBLE);
+                                            cardView1.setVisibility(View.VISIBLE);
+                                            Toast.makeText(LoginActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
