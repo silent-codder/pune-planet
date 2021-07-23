@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,13 +44,14 @@ public class TextActivity extends AppCompatActivity {
 
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
-    String UserId,DocId,radioTxt,chipTxt,checkTxt = "";
+    String UserId,DocId,radioTxt,chipTxt,checkTxt,CoverImgUrl;
     
     EditText mTitle,mDescription;
     TextView mUploadBtn;
     ImageView mBtnSave,mBtnList,coverImg;
     Uri profileImgUri;
     StorageReference storageReference;
+    ProgressDialog progressDialog;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class TextActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         UserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        progressDialog = new ProgressDialog(this);
         
         mTitle = findViewById(R.id.title);
         mDescription = findViewById(R.id.description);
@@ -226,6 +229,7 @@ public class TextActivity extends AppCompatActivity {
         map.put("Category",category);
         map.put("SubCategory",subCategory);
         map.put("Agreement","Accept");
+        map.put("CoverImg",CoverImgUrl);
 
         firebaseFirestore.collection("Posts").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
@@ -245,8 +249,8 @@ public class TextActivity extends AppCompatActivity {
     private void UploadImg() {
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
-                .setOutputCompressQuality(40)
-                .setAspectRatio(9,16)
+                .setOutputCompressQuality(10)
+                .setAspectRatio(1,1)
                 .start(this);
     }
 
@@ -259,7 +263,10 @@ public class TextActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 profileImgUri = result.getUri();
                 coverImg.setImageURI(profileImgUri);
-//                AddImg();
+                AddImg();
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.show();
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
@@ -271,7 +278,7 @@ public class TextActivity extends AppCompatActivity {
 
     private void AddImg() {
 
-        StorageReference profileImgPath = storageReference.child("Profile").child(System.currentTimeMillis() + ".jpg");
+        StorageReference profileImgPath = storageReference.child("CoverImg").child(System.currentTimeMillis() + ".jpg");
 
         profileImgPath.putFile(profileImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -280,31 +287,32 @@ public class TextActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
 
-                        String ProfileUri = task.getResult().toString();
-                        HashMap<String,Object> map = new HashMap<>();
-                        map.put("ProfileImgUrl" , ProfileUri);
+                        CoverImgUrl = task.getResult().toString();
+                        progressDialog.dismiss();
+//                        HashMap<String,Object> map = new HashMap<>();
+//                        map.put("ProfileImgUrl" , ProfileUri);
 
-                        firebaseFirestore.collection("Users").document(UserId).update(map)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        progressDialog.dismiss();
-                                        Toast.makeText(getApplicationContext(), "Upload Successfully..", Toast.LENGTH_SHORT).show();
-//                                        progressBar.setVisibility(View.GONE);
-//                                        Fragment fragment = new SettingFragment();
-//                                        getFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getApplicationContext(), "Storage error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+//                        firebaseFirestore.collection("Users").document(UserId).update(map)
+//                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<Void> task) {
+////                                        progressDialog.dismiss();
+//                                        Toast.makeText(getApplicationContext(), "Upload Successfully..", Toast.LENGTH_SHORT).show();
+////                                        progressBar.setVisibility(View.GONE);
+////                                        Fragment fragment = new SettingFragment();
+////                                        getFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
+//                                    }
+//                                }).addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(getApplicationContext(), "Storage error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        progressDialog.dismiss();
                     }
                 });
 
@@ -313,6 +321,7 @@ public class TextActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
 

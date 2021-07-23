@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SubFragments.ForYouFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="आपल्याकरता"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:reverseLayout="false"
+                android:orientation="horizontal"
+                android:layout_below="@id/text"
+                android:id="@+id/recycleView1"/>
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="नवनवीन विषय अप्रतिम भन्नाट कथा"
+                android:layout_below="@id/recycleView1"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:reverseLayout="false"
+                android:orientation="horizontal"
+                android:layout_below="@id/text1"
+                android:id="@+id/recycleView"/>
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_below="@id/recycleView"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/recycleview_bg">
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="वाचकांची आवड"
+                    android:layout_margin="10dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    tools:ignore="HardcodedText" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:reverseLayout="false"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/text2"
+                    android:id="@+id/recycleView3"/>
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="सर्व साहित्य"
+                android:layout_below="@id/relativeLayout"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:reverseLayout="false"
+                android:orientation="horizontal"
+                android:layout_below="@id/text3"
+                android:id="@+id/recycleView4"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
