@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.DocDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coverImgLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/nature"
+                    android:scaleType="center"
+                    android:id="@+id/coverImg"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:layout_toRightOf="@id/coverImgLayout"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                tools:ignore="HardcodedText" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profile_img"
+                android:layout_toRightOf="@id/coverImgLayout"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/userProfile"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="User Name"
+                android:gravity="center"
+                android:layout_toRightOf="@id/userProfile"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="5dp"/>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_below="@id/userProfile"
+                android:layout_toRightOf="@id/coverImgLayout"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0 (0)"
+                android:layout_toRightOf="@id/ratingBar"
+                android:layout_below="@id/userProfile"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar"
+                android:gravity="center"
+                android:layout_toRightOf="@id/coverImgLayout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:text="0"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_view" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
