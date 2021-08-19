@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AccountFragment">
+
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="अकाऊंट"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:drawableLeft="@drawable/ic_arrow_back"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:drawablePadding="15dp"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnBack"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/firstNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="प्रथम नाव"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField"
+                        android:layout_below="@id/text"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="प्रथम नाव"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/firstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:background="@color/white"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField1"
+                        android:layout_below="@id/textField"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="प्रथम नाव(इंग्लिश मध्ये)"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/firstNameInEnglish"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:background="@color/white"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lastNameLayout"
+                android:layout_below="@id/firstNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="शेवटचे नाव"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField2"
+                        android:layout_below="@id/text1"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="शेवटचे नाव"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/lastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:inputType="textCapWords"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField3"
+                        android:layout_below="@id/textField2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="शेवटचे नाव(इंग्लिश मध्ये)"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/lastNameInEnglish"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:background="@color/white"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nickNameLayout"
+                android:layout_below="@id/lastNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="टोपण नाव"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField4"
+                        android:layout_below="@id/text2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="टोपण नाव"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/nickName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:background="@color/white"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/descriptionLayout"
+                android:layout_below="@id/nickNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="सारांश"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField6"
+                        android:layout_below="@id/text3"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="सारांश"
+                        tools:ignore="HardcodedText">
+
+                        <EditText
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:background="@color/white"
+                            android:drawableTint="@color/black"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dobLayout"
+                android:layout_below="@id/descriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="जन्मतिथी"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:text="09-07-1999"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:background="@drawable/date_bg"
+                        android:layout_below="@id/text4"
+                        android:drawablePadding="20dp"
+                        android:layout_marginTop="10dp"
+                        tools:ignore="HardcodedText" />
+                    <ImageView
+                        android:id="@+id/datePick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_calendar_today_24"
+                        android:layout_below="@id/text4"
+                        android:layout_toRightOf="@id/date"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/genderLayout"
+                android:layout_below="@id/dobLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="लिंग"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/radioGrp">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="महिला"
+                            android:buttonTint="@color/teal_700"
+                            android:id="@+id/female"
+                            tools:ignore="HardcodedText,UnusedAttribute" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="पुरुष"
+                            android:layout_marginLeft="10dp"
+                            android:buttonTint="@color/teal_700"
+                            android:id="@+id/male"
+                            tools:ignore="HardcodedText,UnusedAttribute" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="other"
+                            android:id="@+id/other"
+                            android:buttonTint="@color/teal_700"
+                            android:layout_marginLeft="10dp"
+                            tools:ignore="UnusedAttribute" />
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="माहिती अपलोड करा"
+                android:backgroundTint="@color/teal_700"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:layout_below="@id/genderLayout"
+                tools:ignore="HardcodedText" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/genderLayout"
+                android:layout_marginTop="20dp"
+                android:id="@+id/loader"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

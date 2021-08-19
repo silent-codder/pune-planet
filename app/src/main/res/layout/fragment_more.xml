@@ -1,14 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="सेटिंग्स"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:drawableLeft="@drawable/ic_arrow_back"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:drawablePadding="15dp"
+        tools:ignore="HardcodedText" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnBack"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/profile_img"
+        android:layout_below="@id/view"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:hint="Loading.."
+        android:layout_below="@id/btnBack"
+        android:layout_toRightOf="@id/userProfile"
+        android:layout_marginLeft="10dp"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/userProfile"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/btnAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="अकाऊंट"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/ic_baseline_account"
+        android:layout_below="@id/view1"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="40dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnAccount"
+       />
+
+    <TextView
+        android:id="@+id/btnFavCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="मनपसंत श्रेणी"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/ic_baseline_favorite"
+        android:layout_below="@id/view2"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="40dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnFavCategory"
+        />
+
+    <TextView
+        android:id="@+id/btnNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="सूचना"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/ic_baseline_notifications"
+        android:layout_below="@id/view3"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="40dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnNotification"
+        />
+
+    <TextView
+        android:id="@+id/btnShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="मित्रांना आमंत्रित करा"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/ic_baseline_share_24"
+        android:layout_below="@id/view4"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="40dp"
+        android:background="#C5CAE9"
+        android:layout_below="@id/btnShare"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnShare"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#E8EAF6"
+        android:text="साइन आऊट करा"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>
